@@ -4,6 +4,8 @@ const User = require("../models/User");
 const routes = require("../routes/routes");
 const myMiddleware = require("../middleware/middleware");
 
+const app = express();
+
 mongoose
   .connect("mongodb://localhost:27017/socialmediaapp", {
     useNewUrlParser: true,
@@ -19,3 +21,5 @@ mongoose
 app.use(express.json());
 app.use(myMiddleware);
 app.use("/api", routes);
+
+module.exports = express();
