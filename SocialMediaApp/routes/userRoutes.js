@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
  
-router.post('/', UserController.createUser);
-router.get('/:id', UserController.getUserById);
-router.put('/:id', UserController.updateUserById);
-router.delete('/:id', UserController.deleteUserById);
+//User routes
+router.post('/users', UserController.createUser);
+router.get('/users:id', UserController.getUserById);
+router.put('/users:id', UserController.updateUserById);
+router.delete('/users:id', UserController.deleteUserById);
 
+
+//Tweet Routes
 module.export = router;
