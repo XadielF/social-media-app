@@ -13,7 +13,7 @@ exports.createTweet = async (req, res) => {
   }
 };
 
-exports.getTweet = async (req, res) => {
+exports.getTweetById = async (req, res) => {
   try {
     const tweet = await Tweet.findById(req.params.id);
     if (!tweet) {
@@ -25,25 +25,28 @@ exports.getTweet = async (req, res) => {
   }
 };
 
-
-exports.updateTweet = async (req, res) => {
+exports.updateTweetById = async (req, res) => {
   try {
-    const tweet = await Tweet.findById(req.params.id);
+    const tweet = await Tweet.findByIdAndUpdate(
+      req.params.id,
+      {
+        text: req.body.text,
+      },
+      { new: true }
+    );
     if (!tweet) {
       return res.status(404).json({ error: "Tweet not found" });
     }
     if (tweet.author.toString() !== req.user._id.toString()) {
       return res.status(401).json({ error: "Unauthorized" });
     }
-    tweet.text = req.body.text;
-    await tweet.save();
     res.status(200).json(tweet);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 };
 
-exports.deleteTweet = async (req, res) => {
+exports.deleteTweetById = async (req, res) => {
   try {
     const tweet = await Tweet.findById(req.params.id);
     if (!tweet) {
@@ -56,5 +59,14 @@ exports.deleteTweet = async (req, res) => {
     res.status(204).json();
   } catch (err) {
     res.status(400).json({ error: err.message });
+  }
+};
+
+exports.getAllTweets = async (req, res) => {
+  try {
+    const tweets = await Tweet.find();
+    res.json(tweets);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 };
