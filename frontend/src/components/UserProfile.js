@@ -1,0 +1,1 @@
+// a component that displays a user's profile
