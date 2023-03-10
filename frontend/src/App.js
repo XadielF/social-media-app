@@ -1,24 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
+import AboutPage from "./components/AboutPage";
+import ContactPage from "./components/ContactPage";
 
 function App() {
-  const [tweets, setTweet] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("/api/tweets")
-      .then((response) => {
-        setTweet(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
-
   return (
     <div>
-      <LandingPage />
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/contact" component={ContactPage} />
+      </Switch>
     </div>
   );
 }
