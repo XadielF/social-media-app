@@ -1,5 +1,5 @@
-import React from 'react';
-import './LandingPage.css';
+import React from "react";
+import "./LandingPage.css";
 
 function LandingPage() {
   return (
@@ -7,9 +7,9 @@ function LandingPage() {
       <header>
         <h1>Twitter Clone</h1>
         <nav>
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a href="LandingPage">Home</a>
+          <a href="About">About</a>
+          <a href="Contact">Contact</a>
         </nav>
       </header>
       <main>
