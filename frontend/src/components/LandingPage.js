@@ -18,7 +18,13 @@ function LandingPage() {
         <button className="btn">Get started</button>
       </main>
     </div>
+
+    
   );
 }
 
+
+
 export default LandingPage;
+
+
