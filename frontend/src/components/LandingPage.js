@@ -1,5 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
+import backgroundImage from "../images/landingPagePic.jpg"
 
 function LandingPage() {
   return (
@@ -12,6 +13,7 @@ function LandingPage() {
           <a href="Contact">Contact</a>
         </nav>
       </header>
+      <img src={backgroundImage} alt="background" className="backgroundd-image" />
       <main>
         <h2>Welcome to Twitter Clone</h2>
         <p>Join the conversation! Share your thoughts with the world.</p>
@@ -23,8 +25,4 @@ function LandingPage() {
   );
 }
 
-
-
 export default LandingPage;
-
-
