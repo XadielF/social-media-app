@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import backgroundImage from "../images/landingPagePic.jpg";
 
@@ -21,7 +22,9 @@ function LandingPage() {
       <main>
         <h2>Welcome to Twitter Clone</h2>
         <p>Join the conversation! Share your thoughts with the world.</p>
-        <button className="btn">Get started</button>
+        <Link to="/signup">
+          <button className="btn">Get started</button>
+        </Link>
       </main>
     </div>
   );

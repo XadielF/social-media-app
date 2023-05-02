@@ -8,6 +8,7 @@
     background-image: url(${backgroundImage});
     background-size: cover;
     background-position: center center;
+    position: relative;
   }
 
   header {
@@ -56,33 +57,35 @@
   
   main {
     display: flex;
-    padding-top: 50px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
     max-width: 800px;
     text-align: center;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
   h2 {
     font-size: 48px;
     margin: 0 0 20px 0;
+    color: #36393E;
   }
   
   p {
     font-size: 18px;
     line-height: 1.5;
     margin: 0 0 40px 0;
+    color: #36393E
   }
   
   .btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #1da1f2;
-    color: white;
+    color: #36393E;
     font-size: 18px;
     font-weight: bold;
     border: none;
